@@ -31,6 +31,20 @@ module.exports = {
           plugins: ["react-refresh/babel"], // React Fast Refresh 플러그인
         },
       },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+          },
+        ],
+      },
+
+      {
+        test: /\.webp$/,
+        loader: "file-loader",
+      },
     ],
   },
   plugins: [
