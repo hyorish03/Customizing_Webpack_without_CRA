@@ -1,5 +1,5 @@
-const React = require("react");
-const ReactDom = require("react-dom");
-const { NoCRA } = require("./NoCRA");
+import React from "react";
+import ReactDOM from "react-dom/client";
+import NoCRA from "./NoCRA";
 
-ReactDom.render(<NoCRA />, document.querySelector("root"));
+ReactDOM.createRoot(document.querySelector("#root")).render(<NoCRA />);
