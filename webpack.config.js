@@ -1,4 +1,6 @@
 const path = require("path");
+const webpack = require("webpack");
+
 module.exports = {
   name: "NoCRA",
   mode: "development",
@@ -19,9 +21,8 @@ module.exports = {
             [
               "@babel/preset-env",
               {
-                targets: {
-                  browsers: ["> 5% in KR"],
-                },
+                targets: ">1% in KR",
+                debug: true,
               },
             ],
             "@babel/preset-react",
@@ -30,6 +31,7 @@ module.exports = {
       },
     ],
   },
+  plugins: [new webpack.LoaderOptionsPlugin({ debug: true })],
   output: {
     path: path.join(__dirname, "dist"), // 실제 로컬 경로는 user/hyorinlee/github/.../dist 이겠지만, 현재 파일이 위치한 폴더(__dirname)를 기준으로 "dist" 폴더의 절대 경로를 생성
     filename: "app.js",
